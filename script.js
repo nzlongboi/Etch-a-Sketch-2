@@ -33,22 +33,21 @@ for(var i = 0; i < gridSize; i++) {
 // Well at least I have a section of code that works how I need it to
 
 
-
-// For the next part of the project, I need to research css animations
-// I need to add event listeners to the tiles and make them turn black 
-// and stay black once clicked. I did this with DOM methods last time
-// But maybe I will just use css methods to make things simpler
-
-
-
-
 // I need to find a way to add event listeners to every
 // iteration of gridTiles
 // So, having asked ChatGPT some questions, I see that the forEach()
 // method can be used here. It looks like I can essentially create and
 // initialise an array in order to use the forEach method
 
-var tileArray = document.querySelectorAll('gridTiles');
+var tileArray = document.querySelectorAll('.gridTiles')
 
-tileArray.forEach
+function newClass (gridTiles) {
+	gridTiles.classList.add('clicked');
+}
+
+tileArray.forEach(function (gridTile) {
+	gridTile.addEventListener("click", function() {
+        newClass(gridTile);
+    });
+});
 
