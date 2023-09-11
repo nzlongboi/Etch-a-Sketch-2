@@ -51,3 +51,36 @@ tileArray.forEach(function (gridTile) {
     });
 });
 
+// Using the above code, we are able to add event listeners to 
+// every grid tile.
+
+
+
+// am I going to have to programme in every single variable...or...
+// find some way to make the grid change size discretely
+// Some kind of loop...
+
+
+// This code generates a new grid as specified.
+// The next step is figuring out how to remove the old grid
+const gridButton = document.getElementById('gridButton');
+gridButton.addEventListener('click', setSize)
+
+function setSize () {
+    const sizeInput = prompt('Set Grid Size');
+    const gridContainer = document.getElementById('gridContainer');
+    gridContainer.innerHTML = '';
+
+
+
+    for(var k = 0; k < sizeInput * sizeInput; k++) {
+        var gridTiles = document.createElement('div');
+        gridTiles.className = 'gridTiles';
+    
+        gridContainer.appendChild(gridTiles);
+    }
+}
+
+//By declaring the gridContainer and then giving it the value of ''
+// I can erase any previous content inside the gridContainer once 
+// The button is clicked
